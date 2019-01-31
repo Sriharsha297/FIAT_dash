@@ -1,10 +1,9 @@
 import React from "react";
-import "../header.css"
 
 class Header extends React.Component {
     render() {
         return (
-            <nav className="navbar bg-light padding sticky-top header-padding">
+            <nav className="navbar bg-light sticky-top header-padding" style={{marginBottom:'40px'}}>
                 <div className="container-fluid">
                 <span style={{margin:'0 auto'}}>
                 <h2 >FIAPL SALES YARD MANAGEMENT SYSTEM DASHBOARD</h2>

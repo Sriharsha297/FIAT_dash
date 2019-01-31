@@ -9,21 +9,22 @@ class BarGraph extends React.Component {
             datasets: [
                 {
                     label: 'Cars Entered in Sales yard',
-                    backgroundColor:'#FFA500',
+                    backgroundColor: '#FFA500',
                     // borderColor: 'rgba(255,99,132,1)',
                     borderWidth: 1,
                     // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                     // hoverBorderColor: 'rgba(255,99,132,1)',
-                    data: [2,20,40,60,80,100]
+                    data: [2, 20, 40, 60, 80, 100],
+
                 },
                 {
                     label: 'Cars Waiting for inspection',
                     backgroundColor: '#4B0082',
-                   // borderColor: 'rgba(255,99,132,1)',
+                    // borderColor: 'rgba(255,99,132,1)',
                     borderWidth: 1,
                     // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                     // hoverBorderColor: 'rgba(255,99,132,1)',
-                    data: [10,30,50,70,90,110]
+                    data: [10, 30, 50, 70, 90, 110]
                 },
                 {
                     label: 'Cars Inspected',
@@ -32,17 +33,17 @@ class BarGraph extends React.Component {
                     borderWidth: 1,
                     // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                     // hoverBorderColor: 'rgba(255,99,132,1)',
-                    data: [20,40,60,80,100,120]
+                    data: [20, 40, 60, 80, 100, 120]
                 }
                 ,
                 {
                     label: 'Cars Invoiced',
                     backgroundColor: '#00FF00',
-                   // borderColor: 'rgba(255,99,132,1)',
+                    // borderColor: 'rgba(255,99,132,1)',
                     borderWidth: 1,
                     // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                     // hoverBorderColor: 'rgba(255,99,132,1)',
-                    data: [30,50,70,90,110,130]
+                    data: [30, 50, 70, 90, 110, 130]
                 },
                 {
                     label: 'Cars Delevered',
@@ -51,24 +52,41 @@ class BarGraph extends React.Component {
                     borderWidth: 1,
                     // hoverBackgroundColor: 'rgba(255,99,132,0.4)',
                     // hoverBorderColor: 'rgba(255,99,132,1)',
-                    data: [50,70,90,110,50,154]
+                    data: [50, 70, 90, 110, 50, 154]
                 }
-               
+
             ]
 
         }
     }
     render() {
         return (
-            <div>
-                <h2>INWARD INSPECTION CHART</h2>
+            <div className="container-fluid">
+                <span  className="text-center">
+                    <h2>INWARD INSPECTION CHART</h2>
+                </span>
+                <hr/>
                 <Bar
                     data={this.state}
-                    width={200}
-                    height={200}
-                 
+                    // width={900}
+                    height={400}
+
                     options={{
-                        maintainAspectRatio: false
+                        maintainAspectRatio: false,
+                        //responsive:false,
+                        scales: {
+                            xAxes: [{
+                                stacked: true
+                            }],
+                            yAxes: [{
+                                stacked: true,
+                                scaleLabel: {
+                                    display: true,
+                                    labelString: 'Number of Cars',
+                                    fontSize: 20
+                                }
+                            }]
+                        }
                     }}
                 />
             </div>
